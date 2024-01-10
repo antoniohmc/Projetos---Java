@@ -20,6 +20,8 @@ public class Filme {
         this.genero = genero;
     }
 
+// Adicionar "this.genero = genero".
+
     public Filme(Long id, String nome, String genero) {
         this.id = id;
         this.nome = nome;
@@ -58,6 +60,7 @@ public class Filme {
         this.genero = genero;
     }
 
+// corrigir esse método 
     public void alugar() {
         if (disponivel) {
             disponivel = false;
@@ -67,6 +70,7 @@ public class Filme {
         }
     }
 
+//corrigir esse método 
     public void devolver() {
         if (disponivel) {
             disponivel = true;
