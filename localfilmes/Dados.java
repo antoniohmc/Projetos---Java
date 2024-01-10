@@ -32,6 +32,9 @@ public class Dados {
 
     }
 
+
+// Tentar trocar o parâmetro "collect" por "forEach"
+
     public List<Filme> listaDeFilmesPorGenero(String genero) {
 
         return filmes
