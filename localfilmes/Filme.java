@@ -8,23 +8,16 @@ public class Filme {
 
     private boolean disponivel;
 
-    private Genero genero;
+    private String genero;
 
     public Filme() {
     }
 
-    public Filme(Long id, String nome, boolean disponivel, Genero genero) {
+    public Filme(Long id, String nome, boolean disponivel, String genero) {
         this.id = id;
         this.nome = nome;
         this.disponivel = disponivel;
         this.genero = genero;
-    }
-
-// Adicionar "this.genero = genero".
-
-    public Filme(Long id, String nome, String genero) {
-        this.id = id;
-        this.nome = nome;
     }
 
     public Long getId() {
@@ -52,32 +45,28 @@ public class Filme {
         this.disponivel = disponivel;
     }
 
-    public Genero getGenero() {
+    public String getGenero() {
         return genero;
     }
 
-    public void setGenero(Genero genero) {
+    public void setGenero(String genero) {
         this.genero = genero;
     }
 
-// corrigir esse método 
     public void alugar() {
-        if (disponivel) {
-            disponivel = false;
+        if (isDisponivel()) {
             System.out.println("Filme " + nome + "Alugado com sucesso!");
         } else {
-            throw new IllegalArgumentException("Desculpe, o filme " + nome + "não esta disponivel no momento.");
+            throw new IllegalArgumentException("Desculpe, o filme " + nome + " não esta disponivel no momento.");
         }
     }
 
-//corrigir esse método 
     public void devolver() {
-        if (disponivel) {
-            disponivel = true;
+        if (!isDisponivel()) {
             System.out.println("Filme " + nome + "Devolvido com sucesso!");
         } else {
-            throw new IllegalArgumentException("Esse filme " + nome
-                + "Não foi alugado, por favor insira o nome corretamente do filme que você alugou");
+            throw new IllegalArgumentException("Esse filme : " + nome
+                + " Não foi alugado, por favor insira o nome corretamente do filme que você alugou");
         }
     }
 

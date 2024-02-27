@@ -13,14 +13,14 @@ public class Locadora {
         System.out.println("Digite o Id do filme");
         Long id = scanner.nextLong();
 
-        dados.buscarFilmePorId(id);
+        Filme filmeBuscado = dados.buscarFilmePorId(id);
 
-        if (filme.isDisponivel()) {
-            filme.alugar();
+        if (filmeBuscado.isDisponivel()) {
+            filmeBuscado.alugar();
             System.out.println("Filme alugado com sucesso!");
         } else {
             throw new IllegalArgumentException(
-                "Desculpe, o filme " + filme.getNome() + "não esta disponivel no momento.");
+                "Desculpe, o filme " + filmeBuscado.getNome() + "não esta disponivel no momento.");
         }
 
     }
@@ -31,10 +31,10 @@ public class Locadora {
         System.out.println("Digite o id do filme");
         Long id = scanner.nextLong();
 
-        dados.buscarFilmePorId(id);
+        Filme filmeBuscado = dados.buscarFilmePorId(id);
 
-        if (!filme.isDisponivel()) {
-            filme.devolver();
+        if (!filmeBuscado.isDisponivel()) {
+            filmeBuscado.devolver();
             System.out.println("Filme devolvido com sucesso!");
         }else {
             throw new IllegalArgumentException("Você nao alugou um filme com esse id, por favor insira o id novamente");
