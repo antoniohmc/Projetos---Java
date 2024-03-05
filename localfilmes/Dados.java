@@ -120,18 +120,12 @@ public class Dados {
 
     public Filme buscarFilmePorId(Long id) {
 
-        return filmes
-                .stream()
-                .filter(filme -> filme.getId().equals(id))
-                .findFirst()
-                .orElseThrow();
+        return filmes.stream().filter(filme -> filme.getId().equals(id)).findFirst().orElseThrow();
 
     }
 
 
     public void listaDeFilmes() {
-        filmes
-                .stream()
-                .forEach(filme -> System.out.println("Título: " + filme.getNome() + ", Gênero: " + filme.getGenero()));
+        filmes.stream().forEach(filme -> System.out.println("Título: " + filme.getNome() + ", Gênero: " + filme.getGenero()));
     }
 }

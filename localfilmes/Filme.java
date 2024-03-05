@@ -56,6 +56,7 @@ public class Filme {
     public void alugar() {
         if (isDisponivel()) {
             System.out.println("Filme " + nome + "Alugado com sucesso!");
+            disponivel = false;
         } else {
             throw new IllegalArgumentException("Desculpe, o filme " + nome + " não esta disponivel no momento.");
         }
@@ -64,19 +65,20 @@ public class Filme {
     public void devolver() {
         if (!isDisponivel()) {
             System.out.println("Filme " + nome + "Devolvido com sucesso!");
+            disponivel = true;
         } else {
             throw new IllegalArgumentException("Esse filme : " + nome
-                + " Não foi alugado, por favor insira o nome corretamente do filme que você alugou");
+                    + " Não foi alugado, por favor insira o nome corretamente do filme que você alugou");
         }
     }
 
     @Override
     public String toString() {
         return "Filme{" +
-            "id=" + id +
-            ", nome='" + nome + '\'' +
-            ", disponivel=" + disponivel +
-            ", genero=" + genero +
-            '}';
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", disponivel=" + disponivel +
+                ", genero=" + genero +
+                '}';
     }
 }
